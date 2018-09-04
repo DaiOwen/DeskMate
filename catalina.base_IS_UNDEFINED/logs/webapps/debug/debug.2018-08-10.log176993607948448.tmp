@@ -1,0 +1,32 @@
+2018-08-10 21:36:21.429[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is:upload\item\shop\1\2018081021362167029.jpg
+2018-08-10 21:36:21.487[main]DEBUG com.dai.util.ImgUtil - current complete is:F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021362167029.jpg
+2018-08-10 21:36:22.140[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product(product_name,product_desc,img_addr, normal_price,promotion_price,priority,create_time, last_edit_time,enable_status,product_category_id, shop_id) VALUES (?,?,?, ?,?,?,?, ?,?,?, ?) 
+2018-08-10 21:36:22.178[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), upload\item\shop\1\2018081021362167029.jpg(String), null, null, 20(Integer), 2018-08-10 21:36:21.424(Timestamp), 2018-08-10 21:36:21.424(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-08-10 21:36:22.224[main]DEBUG com.dai.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-10 21:39:34.812[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is:upload\item\shop\1\2018081021393448328.jpg
+2018-08-10 21:39:34.812[main]DEBUG com.dai.util.ImgUtil - current complete is:F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021393448328.jpg
+2018-08-10 21:39:35.002[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product(product_name,product_desc,img_addr, normal_price,promotion_price,priority,create_time, last_edit_time,enable_status,product_category_id, shop_id) VALUES (?,?,?, ?,?,?,?, ?,?,?, ?) 
+2018-08-10 21:39:35.035[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), upload\item\shop\1\2018081021393448328.jpg(String), null, null, 20(Integer), 2018-08-10 21:39:34.808(Timestamp), 2018-08-10 21:39:34.808(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-08-10 21:39:35.083[main]DEBUG com.dai.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-10 21:40:56.603[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is:upload\item\shop\1\2018081021405645782.jpg
+2018-08-10 21:40:56.604[main]DEBUG com.dai.util.ImgUtil - current complete is:F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021405645782.jpg
+2018-08-10 21:40:56.803[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product(product_name,product_desc,img_addr, normal_price,promotion_price,priority,create_time, last_edit_time,enable_status,product_category_id, shop_id) VALUES (?,?,?, ?,?,?,?, ?,?,?, ?) 
+2018-08-10 21:40:56.842[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), upload\item\shop\1\2018081021405645782.jpg(String), null, null, 20(Integer), 2018-08-10 21:40:56.598(Timestamp), 2018-08-10 21:40:56.598(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-08-10 21:40:56.857[main]DEBUG com.dai.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-10 21:42:48.000[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is:upload\item\shop\1\2018081021424786460.jpg
+2018-08-10 21:42:48.000[main]DEBUG com.dai.util.ImgUtil - current complete is:F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021424786460.jpg
+2018-08-10 21:42:48.224[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product(product_name,product_desc,img_addr, normal_price,promotion_price,priority,create_time, last_edit_time,enable_status,product_category_id, shop_id) VALUES (?,?,?, ?,?,?,?, ?,?,?, ?) 
+2018-08-10 21:42:48.263[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), upload\item\shop\1\2018081021424786460.jpg(String), null, null, 20(Integer), 2018-08-10 21:42:47.995(Timestamp), 2018-08-10 21:42:47.995(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-08-10 21:42:48.279[main]DEBUG com.dai.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-10 21:46:58.429[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is:upload\item\shop\1\2018081021465871261.jpg
+2018-08-10 21:46:58.429[main]DEBUG com.dai.util.ImgUtil - current complete is:F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021465871261.jpg
+2018-08-10 21:46:58.654[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product(product_name,product_desc,img_addr, normal_price,promotion_price,priority,create_time, last_edit_time,enable_status,product_category_id, shop_id) VALUES (?,?,?, ?,?,?,?, ?,?,?, ?) 
+2018-08-10 21:46:58.689[main]DEBUG com.dai.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), upload\item\shop\1\2018081021465871261.jpg(String), null, null, 20(Integer), 2018-08-10 21:46:58.416(Timestamp), 2018-08-10 21:46:58.416(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-08-10 21:46:58.703[main]DEBUG com.dai.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-10 21:46:58.710[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is :upload\item\shop\1\2018081021465824988.jpg
+2018-08-10 21:46:58.710[main]DEBUG com.dai.util.ImgUtil - current complete addr is :F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021465824988.jpg
+2018-08-10 21:46:58.740[main]DEBUG com.dai.util.ImgUtil - current relativeAddr is :upload\item\shop\1\2018081021465840041.jpg
+2018-08-10 21:46:58.740[main]DEBUG com.dai.util.ImgUtil - current complete addr is :F:\Java\prodectDev\win_image\upload\item\shop\1\2018081021465840041.jpg
+2018-08-10 21:46:58.802[main]DEBUG com.dai.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority, create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-08-10 21:46:58.803[main]DEBUG com.dai.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: upload\item\shop\1\2018081021465824988.jpg(String), null, null, 2018-08-10 21:46:58.739(Timestamp), 6(Long), upload\item\shop\1\2018081021465840041.jpg(String), null, null, 2018-08-10 21:46:58.769(Timestamp), 6(Long)
+2018-08-10 21:46:58.806[main]DEBUG com.dai.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2

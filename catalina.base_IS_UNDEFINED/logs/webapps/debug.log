@@ -1,0 +1,57 @@
+2018-08-19 00:01:47.022[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:01:47.096[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:01:47.115[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:01:47.122[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2018-08-19 00:01:47.122[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:01:47.124[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 00:01:47.127[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE product_name like '%测试%' ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:01:47.127[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:01:47.130[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:01:47.132[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE product_name like '%测试%' 
+2018-08-19 00:01:47.132[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:01:47.133[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 00:19:14.207[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:19:14.261[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:19:14.289[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:19:14.298[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2018-08-19 00:19:14.298[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:19:14.300[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 00:19:14.303[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE product_name like '%测试%' ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:19:14.304[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:19:14.307[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:19:14.308[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE product_name like '%测试%' 
+2018-08-19 00:19:14.308[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:19:14.310[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 00:19:31.449[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:19:31.499[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:19:31.519[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:19:31.526[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2018-08-19 00:19:31.527[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:19:31.528[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 00:19:31.531[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE product_name like '%测试%' ORDER BY priority DESC LIMIT ?,?; 
+2018-08-19 00:19:31.531[main]DEBUG com.dai.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-19 00:19:31.534[main]DEBUG com.dai.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-19 00:19:31.535[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE product_name like '%测试%' 
+2018-08-19 00:19:31.535[main]DEBUG com.dai.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-19 00:19:31.536[main]DEBUG com.dai.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-19 09:52:06.730[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
+2018-08-19 09:52:06.786[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 2(Long)
+2018-08-19 09:52:06.817[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 0
+2018-08-19 10:00:52.101[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
+2018-08-19 10:00:52.175[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 10(Long)
+2018-08-19 10:00:52.258[main]DEBUG com.dai.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
+2018-08-19 11:11:37.439[main]DEBUG com.dai.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2018-08-19 11:11:37.492[main]DEBUG com.dai.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 11:11:37.607[main]DEBUG com.dai.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-08-19 16:55:30.941[main]DEBUG com.dai.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-08-19 16:55:31.021[main]DEBUG com.dai.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 1(Integer), 5(Integer)
+2018-08-19 16:55:31.168[main]DEBUG com.dai.dao.ShopDao.queryShopList - <==      Total: 5
+2018-08-19 16:55:31.177[main]DEBUG com.dai.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2018-08-19 16:55:31.178[main]DEBUG com.dai.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-08-19 16:55:31.179[main]DEBUG com.dai.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-19 16:55:31.182[main]DEBUG com.dai.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,?; 
+2018-08-19 16:55:31.182[main]DEBUG com.dai.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 1(Long), 0(Integer), 2(Integer)
+2018-08-19 16:55:31.291[main]DEBUG com.dai.dao.ShopDao.queryShopList - <==      Total: 2
+2018-08-19 16:55:31.292[main]DEBUG com.dai.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2018-08-19 16:55:31.293[main]DEBUG com.dai.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long), 1(Long)
+2018-08-19 16:55:31.294[main]DEBUG com.dai.dao.ShopDao.queryShopCount - <==      Total: 1

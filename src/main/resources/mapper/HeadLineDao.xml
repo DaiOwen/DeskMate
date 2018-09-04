@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dai.dao.HeadLineDao">
+	<select id="queryHeadLine" resultType="com.dai.entity.HeadLine">
+		SELECT
+		line_id,
+		line_name,
+		line_link,
+		line_img,
+		priority,
+		enable_status,
+		create_time,
+		last_edit_time
+		FROM
+		tb_head_line
+		<where>
+			<if test="headLineCondition.enableStatus!=null">
+				and enable_status = #{headLineCondition.enableStatus}
+			</if>
+		</where>
+		ORDER BY
+		priority DESC
+	</select>
+	<select id="queryHeadLineById" resultType="com.dai.entity.HeadLine">
+		SELECT
+		line_id,
+		line_name,
+		line_link,
+		line_img,
+		priority,
+		enable_status,
+		create_time,
+		last_edit_time
+		FROM
+		tb_head_line
+		WHERE
+		line_id = #{lineId}
+	</select>
+	<select id="queryHeadLineByIds" resultType="com.dai.entity.HeadLine"
+		parameterType="long">
+		SELECT
+		line_id,
+		line_name,
+		line_link,
+		line_img,
+		priority,
+		enable_status,
+		create_time,
+		last_edit_time
+		FROM
+		tb_head_line
+		WHERE line_id IN
+		<foreach collection="list" item="lineId" open="(" separator=","
+			close=")">
+			#{lineId}
+		</foreach>
+	</select>
+	<insert id="insertHeadLine" useGeneratedKeys="true" keyProperty="lineId"
+		keyColumn="line_id">
+		INSERT INTO
+		tb_head_line(line_name,line_link,line_img,priority,
+		enable_status,
+		create_time,last_edit_time)
+		VALUES
+		(#{lineName},#{lineLink},#{lineImg},#{priority},
+		#{enableStatus},#{createTime},#{lastEditTime})
+	</insert>
+	<update id="updateHeadLine" parameterType="com.dai.entity.HeadLine">
+		update tb_head_line
+		<set>
+			<if test="lineName != null">line_name=#{lineName},</if>
+			<if test="lineLink != null">line_link=#{lineLink},</if>
+			<if test="lineImg != null">line_img=#{lineImg},</if>
+			<if test="priority != null">priority=#{priority},</if>
+			<if test="enableStatus != null">enable_status=#{enableStatus},</if>
+			<if test="lastEditTime != null">last_edit_time=#{lastEditTime}</if>
+		</set>
+		where line_id=#{lineId}
+	</update>
+	<delete id="deleteHeadLine">
+		DELETE FROM
+		tb_head_line
+		WHERE
+		line_id =
+		#{lineId}
+	</delete>
+	<delete id="batchDeleteHeadLine" parameterType="long">
+		DELETE FROM
+		tb_head_line
+		WHERE line_id IN
+		<foreach collection="list" item="lineId" open="(" separator=","
+			close=")">
+			#{lineId}
+		</foreach>
+	</delete>
+
+</mapper>

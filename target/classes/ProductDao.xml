@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dai.dao.ProductDao">
+	<resultMap id="productMap" type="com.dai.entity.Product">
+		<id column="product_id" property="productId" />
+		<result column="product_name" property="productName" />
+		<result column="product_desc" property="productDesc" />
+		<result column="img_addr" property="imgAddr" />
+		<result column="normal_price" property="normalPrice" />
+		<result column="promotion_price" property="promotionPrice" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<result column="enable_status" property="enableStatus" />
+		<association property="productCategory" column="product_category_id"
+			javaType="com.dai.entity.ProductCategory">
+			<id column="product_category_id" property="productCategoryId" />
+			<result column="product_category_name" property="productCategoryName" />
+		</association>
+		<association property="shop" column="shop_id"
+			javaType="com.dai.entity.Shop">
+			<id column="shop_id" property="shopId" />
+			<result column="owner_id" property="ownerId" />
+			<result column="shop_name" property="shopName" />
+		</association>
+		<collection property="productImgList" column="product_id"
+			ofType="com.dai.entity.ProductImg">
+			<id column="product_img_id" property="productImgId" />
+			<result column="detail_img" property="imgAddr" />
+			<result column="img_desc" property="imgDesc" />
+			<result column="priority" property="priority" />
+			<result column="create_time" property="createTime" />
+			<result column="product_id" property="productId" />
+		</collection>
+	</resultMap>
+	<select id="queryProductList" resultType="com.dai.entity.Product">
+		SELECT
+		product_id,
+		product_name,
+		product_desc,
+		img_addr,
+		normal_price,
+		promotion_price,
+		priority,
+		create_time,
+		last_edit_time,
+		enable_status,
+		product_category_id,
+		shop_id
+		FROM
+		tb_product
+		<where>
+			<if
+				test="productCondition.shop!=null
+				 and productCondition.shop.shopId!=null">
+				and shop_id = #{productCondition.shop.shopId}
+			</if>
+			<if
+				test="productCondition.productCategory!=null
+				 and productCondition.productCategory.productCategoryId!=null">
+				and product_category_id =
+				#{productCondition.productCategory.productCategoryId}
+			</if>
+			<!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是 
+				'%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
+			<if test="productCondition.productName!=null">
+				and product_name like '%${productCondition.productName}%'
+			</if>
+			<if test="productCondition.enableStatus!=null">
+				and enable_status = #{productCondition.enableStatus}
+			</if>
+		</where>
+		ORDER BY
+		priority DESC
+		LIMIT #{rowIndex},#{pageSize};
+	</select>
+
+	<select id="queryProductCount" resultType="int">
+		SELECT count(1) FROM tb_product
+		<where>
+			<if
+				test="productCondition.shop!=null
+				 and productCondition.shop.shopId!=null">
+				and shop_id = #{productCondition.shop.shopId}
+			</if>
+			<if
+				test="productCondition.productCategory!=null
+				 and productCondition.productCategory.productCategoryId!=null">
+				and product_category_id =
+				#{productCondition.productCategory.productCategoryId}
+			</if>
+			<if test="productCondition.productName!=null">
+				and product_name like '%${productCondition.productName}%'
+			</if>
+			<if test="productCondition.enableStatus!=null">
+				and enable_status = #{productCondition.enableStatus}
+			</if>
+		</where>
+	</select>
+	<select id="queryProductById" resultMap="productMap"
+		parameterType="Long">
+		<!-- 具体的sql -->
+		SELECT
+		p.product_id,
+		p.product_name,
+		p.product_desc,
+		p.img_addr,
+		p.normal_price,
+		p.promotion_price,
+		p.priority,
+		p.create_time,
+		p.last_edit_time,
+		p.enable_status,
+		p.product_category_id,
+		p.shop_id,
+		pm.product_img_id,
+		pm.img_addr AS detail_img,
+		pm.img_desc,
+		pm.priority,
+		pm.create_time
+		FROM
+		tb_product p
+		LEFT JOIN
+		tb_product_img pm
+		ON
+		p.product_id =
+		pm.product_id
+		WHERE
+		p.product_id =
+		#{productId}
+		ORDER BY
+		pm.priority DESC
+	</select>
+	<insert id="insertProduct" parameterType="com.dai.entity.Product"
+		useGeneratedKeys="true" keyProperty="productId" keyColumn="product_id">
+		INSERT INTO
+		tb_product(product_name,product_desc,img_addr,
+		normal_price,promotion_price,priority,create_time,
+		last_edit_time,enable_status,product_category_id,
+		shop_id)
+		VALUES
+		(#{productName},#{productDesc},#{imgAddr},
+		#{normalPrice},#{promotionPrice},#{priority},#{createTime},
+		#{lastEditTime},#{enableStatus},#{productCategory.productCategoryId},
+		#{shop.shopId})
+	</insert>
+	<update id="updateProduct" parameterType="com.dai.entity.Product"
+		keyProperty="product_id" useGeneratedKeys="true">
+		UPDATE tb_product
+		<set>
+			<if test="productName != null">product_name=#{productName},</if>
+			<if test="productDesc != null">product_desc=#{productDesc},</if>
+			<if test="imgAddr != null">img_addr=#{imgAddr},</if>
+			<if test="normalPrice != null">normal_price=#{normalPrice},</if>
+			<if test="promotionPrice != null">promotion_price=#{promotionPrice},</if>
+			<if test="priority != null">priority=#{priority},</if>
+			<if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
+			<if test="enableStatus != null">enable_status=#{enableStatus},</if>
+			<if
+				test="productCategory != null
+				 and productCategory.productCategoryId != null">
+				product_category_id=#{productCategory.productCategoryId}
+			</if>
+		</set>
+		WHERE product_id = #{productId}
+		AND shop_id=#{shop.shopId}
+	</update>
+	<update id="updateProductCategoryToNull" parameterType="Long">
+		UPDATE
+		tb_product
+		SET
+		product_category_id = null
+		WHERE product_category_id =
+		#{productCategoryId}
+	</update>
+	<delete id="deleteProduct">
+		DELETE FROM
+		tb_product
+		WHERE
+		product_id = #{productId}
+		AND shop_id=#{shopId}
+	</delete>
+</mapper>
