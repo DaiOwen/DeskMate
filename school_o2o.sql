@@ -1,6 +1,6 @@
-//×¢ÒâÈç¹ûÒªÍ³Ò»½¨±íµÄ»°£¬Ö´ÐÐÓï¾äµÄÊ±ºò°ÑËùÓÐµÄÖÐÎÄ×¢ÊÍÈ«²¿È¥µô
+#æ³¨é‡Šçš„ä¸¤ç§æ ¼å¼ï¼šâ‘ # XXX  â‘¡/*  */
 USE school_o2o;
-//ÇøÓò±í
+#åŒºåŸŸè¡¨
 CREATE TABLE IF NOT EXISTS tb_area (
 	area_id INT(2) NOT NULL AUTO_INCREMENT,
 	area_name VARCHAR(200) NOT NULL,\
@@ -11,21 +11,21 @@ CREATE TABLE IF NOT EXISTS tb_area (
 	UNIQUE KEY UK_AREA(area_name)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//ÓÃ»§±í
+#ç”¨æˆ·è¡¨
 CREATE TABLE IF NOT EXISTS tb_person_info(
 	user_id INT(10) NOT NULL AUTO_INCREMENT,
 	NAME VARCHAR(32) DEFAULT NULL,
 	profile_img VARCHAR(1024) DEFAULT NULL,
 	email VARCHAR(1024) DEFAULT NULL,
 	gender VARCHAR(2) DEFAULT NULL,
-	enable_status INT(2) DEFAULT 0 COMMENT'0:½ûÖ¹Ê¹ÓÃ±¾ÉÌ³Ç£¬1:ÔÊÐíÊ¹ÓÃ±¾ÉÌ³Ç',
-	user_type INT(2) NOT NULL DEFAULT 1 COMMENT '1:¹Ë¿Í 2:µê¼Ò 3:³¬¼¶¹ÜÀíÔ±',
+	enable_status INT(2) DEFAULT 0 COMMENT'0:ç¦æ­¢ä½¿ç”¨æœ¬å•†åŸŽï¼Œ1:å…è®¸ä½¿ç”¨æœ¬å•†åŸŽ',
+	user_type INT(2) NOT NULL DEFAULT 1 COMMENT '1:é¡¾å®¢ 2:åº—å®¶ 3:è¶…çº§ç®¡ç†å‘˜',
 	create_time DATETIME DEFAULT NULL,
 	last_edit_time DATETIME DEFAULT NULL,
 	PRIMARY KEY(user_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//Î¢ÐÅÕÊºÅÐÅÏ¢±í
+#å¾®ä¿¡å¸å·ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_wechat_auth (
 	wechat_auth_id INT(10) NOT NULL AUTO_INCREMENT,
 	user_id INT(10) NOT NULL,
@@ -34,9 +34,9 @@ CREATE TABLE IF NOT EXISTS tb_wechat_auth (
 	PRIMARY KEY(wechat_auth_id),
 	CONSTRAINT fk_wechatauth_profile FOREIGN KEY(user_id) REFERENCES tb_person_info(user_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-//¸ø±íÖÐµÄopen_idÌí¼ÓÎ¨Ò»ÐÔÖÊ
+#ç»™è¡¨ä¸­çš„open_idæ·»åŠ å”¯ä¸€æ€§è´¨
 ALTER TABLE tb_wechat_auth ADD UNIQUE INDEX(open_id);
-//±¾µØÕÊºÅÐÅÏ¢±í
+#æœ¬åœ°å¸å·ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_local_auth (
 	local_auth_id  INT(10) NOT NULL AUTO_INCREMENT,
 	user_id INT(10)NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS tb_local_auth (
 	CONSTRAINT fk_localauth_profile FOREIGN KEY(user_id) REFERENCES tb_person_info(user_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//Í·ÌõÐÅÏ¢±í
+#å¤´æ¡ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_head_line(
 	line_id INT(100)NOT NULL AUTO_INCREMENT,
 	line_name VARCHAR(1000) DEFAULT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS tb_head_line(
 	PRIMARY KEY(line_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//µêÆÌÀà±ðÐÅÏ¢±í
+#åº—é“ºç±»åˆ«ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_shop_category (
 	shop_category_id INT(11) NOT NULL AUTO_INCREMENT,
 	shop_category_name VARCHAR(100) NOT NULL DEFAULT '',
@@ -77,10 +77,10 @@ CREATE TABLE IF NOT EXISTS tb_shop_category (
 			tb_shop_category(shop_category_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//µêÆÌÀà
+#åº—é“ºç±»
 CREATE TABLE IF NOT EXISTS tb_shop(
 	shop_id INT(10) NOT NULL AUTO_INCREMENT,
-	owner_id INT(10) NOT NULL COMMENT 'µêÆÌ´´½¨ÈË',
+	owner_id INT(10) NOT NULL COMMENT 'åº—é“ºåˆ›å»ºäºº',
 	area_id INT(5) DEFAULT NULL,
 	shop_category_id INT (11) DEFAULT NULL,
 	shop_name VARCHAR(256) NOT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS tb_shop(
 			REFERENCES tb_shop_category(shop_category_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//ÉÌÆ·Àà±ðÐÅÏ¢±í
+#å•†å“ç±»åˆ«ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_product_category(
 	product_category_id INT(11) NOT NULL AUTO_INCREMENT,
 	product_category_name VARCHAR(100)NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS tb_product_category(
 	CONSTRAINT fk_praduce_shop FOREIGN KEY(shop_id) REFERENCES tb_shop(shop_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//ÉÌÆ·ÐÅÏ¢±í
+#å•†å“ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_product(
 	product_id INT(100) NOT NULL AUTO_INCREMENT,
 	product_name VARCHAR(100)NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS tb_product(
 		REFERENCES tb_product_category(product_category_id),
 	CONSTRAINT fk_product_shop FOREIGN KEY(shop_id) REFERENCES tb_shop(shop_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-//ÉÌÆ·Í¼Æ¬ÐÅÏ¢±í
+#å•†å“å›¾ç‰‡ä¿¡æ¯è¡¨
 CREATE TABLE IF NOT EXISTS tb_product_img(
 	product_img_id INT(20) NOT NULL AUTO_INCREMENT,
 	img_addr VARCHAR(2000)NOT NULL,
