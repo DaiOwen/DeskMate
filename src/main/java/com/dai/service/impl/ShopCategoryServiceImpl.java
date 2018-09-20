@@ -53,7 +53,8 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 			key = key + "_allsecondlevel";
 		}
 		// 判断key是否存在
-		if (!jedisKeys.exists(key)) {
+		boolean exists = jedisKeys.exists(key);
+		if (!exists) {
 			// 若不存在，则从数据库里面取出相应数据
 			shopCategoryList = shopCategoryDao.queryShopCategory(shopCategoryCondition);
 			// 将相关的实体类集合转换成string,存入redis里面对应的key中

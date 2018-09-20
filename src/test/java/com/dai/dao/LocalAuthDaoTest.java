@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Date;
 
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class LocalAuthDaoTest extends BaseTest {
 	private static final String password = "testuserpasswd";
 
 	@Test
+	@Ignore
 	public void testAInsertLocalAuth() throws Exception {
 		// 新增一条平台帐号信息
 		LocalAuth localAuth = new LocalAuth();
@@ -29,7 +31,7 @@ public class LocalAuthDaoTest extends BaseTest {
 		// 给平台帐号绑定用户信息
 		localAuth.setPersonInfo(personInfo);
 		// 给平台上设置用户姓名和密码
-		localAuth.setUserName(username);
+		localAuth.setusername(username);
 		localAuth.setPassword(password);
 		localAuth.setCreateTime(new Date());
 		int effectNum = localAuthDao.insertLocalAuth(localAuth);
@@ -37,6 +39,7 @@ public class LocalAuthDaoTest extends BaseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testBQueryLocalByUserAndPWD() throws Exception {
 		// 按照用户id查询平台帐号，进而获取用户信息
 		LocalAuth localAuth = localAuthDao.queryLocalByUserNameAndPwd(username, password);
@@ -44,8 +47,9 @@ public class LocalAuthDaoTest extends BaseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testCQueryLocalByUserId() throws Exception {
-		LocalAuth localAuth = localAuthDao.queryLocalByUserId(1L);
+		LocalAuth localAuth = localAuthDao.queryLocalByUserId(3L);
 		assertEquals("姚明", localAuth.getPersonInfo().getName());
 	}
 
@@ -53,11 +57,11 @@ public class LocalAuthDaoTest extends BaseTest {
 	public void testDUpdateLocalAuth() throws Exception {
 		//依据用户id,平台帐号，以及旧密码修改平台帐号密码
 		Date now = new Date();
-		int effectNum = localAuthDao.updateLocalAuth(1l, username, password, password+"new", now);
+		int effectNum = localAuthDao.updateLocalAuth(3L, username, password+"new", password+"daihu", now);
 		assertEquals(1, effectNum);
 		//查询出该条件平台帐号的最新消息
-		LocalAuth localAuth = localAuthDao.queryLocalByUserId(1L);
-		System.out.println(localAuth.getUserName()+"==="+localAuth.getPassword());
+		LocalAuth localAuth = localAuthDao.queryLocalByUserId(3L);
+		System.out.println(localAuth.getusername()+"==="+localAuth.getPassword());
 		
 	}
 }

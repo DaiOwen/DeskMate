@@ -31,10 +31,11 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 	}
 
 	@Override
+	//基于事务
 	@Transactional
 	public LocalAuthExecution bindLocalAuth(LocalAuth localAuth) throws LocalAuthOperationException {
 		// 空值判断，传入的localAuth 帐号密码，用户信息特别是userId不能为空，否则直接返回错误
-		if (localAuth == null || localAuth.getPassword() == null || localAuth.getUserName() == null
+		if (localAuth == null || localAuth.getPassword() == null || localAuth.getusername() == null
 				|| localAuth.getPersonInfo() == null || localAuth.getPersonInfo().getUserId() == null) {
 			return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
 		}

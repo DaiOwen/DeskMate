@@ -94,8 +94,16 @@ public class DESUtil {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(getEncryptString("work"));
-		System.out.println(getEncryptString("Daihu1119!!"));
+		System.out.println(getEncryptString("root"));
+		System.out.println(getEncryptString("daihu"));
+		
+		//root daihu
+		//WnplV/ietfQ=
+		//98FunSaopNs=
+		//System.out.println(getEncryptString("work"));
+		//zCKAAEaFQUI=
+		//System.out.println(getEncryptString("Daihu1119!!"));
+		//TCmT6VM5vHrkLQJS97zp8A==
 	}
 
 }

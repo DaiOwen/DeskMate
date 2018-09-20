@@ -1,0 +1,13 @@
+com\dai\dao\ProductImgDaoTest.class
+com\dai\dao\ShopDaoTest.class
+com\dai\dao\LocalAuthDaoTest.class
+com\dai\dao\ShopCategoryDaoTest.class
+com\dai\service\LocalAuthServiceTest.class
+com\dai\service\ShopServiceTest.class
+com\dai\service\ProductServiceTest.class
+com\dai\dao\ProductCategoryDaoTest.class
+com\dai\service\AreaServiceTest.class
+com\dai\dao\ProductDaoTest.class
+com\dai\dao\HeadLineTest.class
+com\dai\dao\AreaDaoTest.class
+com\dai\BaseTest.class

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * 微信工具类
  * 
- * @author xiangze
+ * @author 代虎
  *
  */
 public class WechatUtil {
@@ -42,10 +42,10 @@ public class WechatUtil {
 	 */
 	public static UserAccessToken getUserAccessToken(String code) throws IOException {
 		// 测试号信息里的appId
-		String appId = "wxd7f6c5b8899fba83";
+		String appId = "wxd4c4bafcd91b9641";
 		log.debug("appId:" + appId);
 		// 测试号信息里的appsecret
-		String appsecret = "665ae80dba31fc91ab6191e7da4d676d";
+		String appsecret = "33fa1c1d49d24866bbfec37f95b34e19";
 		log.debug("secret:" + appsecret);
 		// 根据传入的code,拼接出访问微信定义好的接口的URL
 		String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appId + "&secret=" + appsecret

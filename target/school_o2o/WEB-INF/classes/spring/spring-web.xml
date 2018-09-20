@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 配置SpringMVC -->
+	<!-- 1. 开启SpringMVC的注解模式 -->
+	<mvc:annotation-driven/>
+	<!-- 2.静态资源默认servlet配置 
+			1)加入对静态资源的处理：js,jif,png
+			2)允许使用“/”做整体映射
+			-->
+	<mvc:resources location="*/resources/" mapping="/resources/**"/>
+	<mvc:default-servlet-handler/>
+	<!-- 3.定义视图解析器 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/html/"/>
+		<property name="suffix" value=".html"/>
+	</bean>
+	<!-- 文件上传解析器 -->
+	<bean id="multipartResolver" 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<!-- 设置文件上传的大小以及缓存-->
+		<property name="maxUploadSize" value="20971520"></property>
+		<property name="maxInMemorySize" value="20971520"></property>
+			
+	</bean>
+	<!--  4.扫描web相关的bean -->	
+	<context:component-scan base-package="com.dai.web"></context:component-scan>
+</beans>

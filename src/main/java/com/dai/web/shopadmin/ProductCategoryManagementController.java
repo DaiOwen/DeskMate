@@ -27,21 +27,22 @@ import com.dai.service.ProductCategoryService;
 public class ProductCategoryManagementController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
-	
-	@RequestMapping(value = "getproductcategorylist", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
 	@ResponseBody
-	private Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request){
-		Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
+	private Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
+		Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
 		List<ProductCategory> list = null;
-		if(currentShop != null && currentShop.getShopId() > 0) {
+		if (currentShop != null && currentShop.getShopId() > 0) {
 			list = productCategoryService.getProductCategoryList(currentShop.getShopId());
-			return new Result<List<ProductCategory>>(true,list);
-		}else {
+			return new Result<List<ProductCategory>>(true, list);
+		} else {
 			ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
-			return new Result<List<ProductCategory>>(false,ps.getState(),ps.getStateInfo());
+			return new Result<List<ProductCategory>>(false, ps.getState(), ps.getStateInfo());
 		}
 	}
-	@RequestMapping(value = "addproductcategorys", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/addproductcategorys", method = RequestMethod.POST)
 	@ResponseBody
 	private Map<String, Object> addProductCategorys(@RequestBody List<ProductCategory> productCategoryList,
 			HttpServletRequest request) {
@@ -98,4 +99,6 @@ public class ProductCategoryManagementController {
 		}
 		return modelMap;
 	}	
+
 }
+

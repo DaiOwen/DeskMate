@@ -67,7 +67,6 @@ public class ProductManagementController {
 			Product productCondition = compactProductCondition(currentShop.getShopId(), productCategoryId, productName);
 			// 传入查询条件以及分页信息进行查询，返回相应商品列表以及总数
 			ProductExecution pe = productService.getProductList(productCondition, pageIndex, pageSize);
-			System.out.println("pe.getProductList().size()================="+pe.getProductList().size());
 			modelMap.put("productList", pe.getProductList());
 			modelMap.put("count", pe.getCount());
 			modelMap.put("success", true);
