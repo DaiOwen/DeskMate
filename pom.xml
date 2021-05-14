@@ -115,7 +115,7 @@
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5.2</version>
+			<version>0.9.5.4</version>
 		</dependency>
 		<!-- 图片处理 -->
 		<!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
