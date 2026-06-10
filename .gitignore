@@ -1,0 +1,30 @@
+# Maven target
+target/
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+catalina.base_IS_UNDEFINED/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.war
+*.jar
+!src/main/resources/**/*.jar
+
+# Temp
+*.tmp
+*.bak
+*.swp
+*~

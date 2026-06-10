@@ -1,9 +1,0 @@
-2018-09-19 00:05:18.531[main]DEBUG com.dai.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id,area_name,priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2018-09-19 00:05:18.600[main]DEBUG com.dai.dao.AreaDao.queryArea - ==> Parameters: 
-2018-09-19 00:05:18.619[main]DEBUG com.dai.dao.AreaDao.queryArea - <==      Total: 4
-2018-09-19 10:50:52.959[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
-2018-09-19 10:50:52.986[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
-2018-09-19 10:50:53.115[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - <==      Total: 5
-2018-09-19 10:51:19.934[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
-2018-09-19 10:51:19.959[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
-2018-09-19 10:51:20.049[main]DEBUG com.dai.dao.HeadLineDao.queryHeadLine - <==      Total: 5

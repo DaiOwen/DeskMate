@@ -1,5 +1,8 @@
 # DeskMate
 
+[![Java CI](https://github.com/DaiOwen/DeskMate/actions/workflows/maven.yml/badge.svg)](https://github.com/DaiOwen/DeskMate/actions/workflows/maven.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 DeskMate is a B2C campus e-commerce platform built on a distributed architecture using the SSM (Spring + Spring MVC + MyBatis) framework. It provides both a back-office shop management system and a front-facing shopping portal. Subsystems communicate via HTTP, with Redis powering SSO and caching, MySQL as the database, and SUI Mobile for the frontend UI framework.
 
 > 中文文档请参阅 [README_CN.md](./README_CN.md)
@@ -171,6 +174,22 @@ redis.pool.maxWait=3000
 
 ## Quick Start
 
+### Docker (Recommended)
+
+```bash
+# Clone the repository
+git clone git@github.com:DaiOwen/DeskMate.git
+cd DeskMate
+
+# Build and run with Docker Compose
+mvn clean package -DskipTests
+docker-compose up -d
+
+# Open http://localhost:8080
+```
+
+### Manual Deployment
+
 ```bash
 # Clone the repository
 git clone git@github.com:DaiOwen/DeskMate.git
@@ -188,4 +207,11 @@ mvn clean package -DskipTests
 
 ## License
 
-This project is for educational purposes.
+This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
+
+---
+
+<p align="center">
+  <b>⭐ If this project helps you, please consider giving it a star!</b><br>
+  <i>Your support keeps this project alive and growing 🚀</i>
+</p>
