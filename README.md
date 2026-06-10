@@ -2,6 +2,8 @@
 
 DeskMate is a B2C campus e-commerce platform built on a distributed architecture using the SSM (Spring + Spring MVC + MyBatis) framework. It provides both a back-office shop management system and a front-facing shopping portal. Subsystems communicate via HTTP, with Redis powering SSO and caching, MySQL as the database, and SUI Mobile for the frontend UI framework.
 
+> 中文文档请参阅 [README_CN.md](./README_CN.md)
+
 ## Architecture
 
 ```
